@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyButton = document.getElementById('copy');
     const errorDisplay = document.getElementById('error');
 
+    function isValidUrl(url) {
+        try {
+            new URL(url);
+            return url.startsWith('http://') || url.startsWith('https://');
+        } catch (e) {
+            return false;
+        }
+    }
+
     shortifyButton.addEventListener('click', async () => {
         const longUrl = longLinkInput.value.trim();
 
@@ -15,6 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!longUrl) {
             errorDisplay.textContent = "Пожалуйста, введите URL.";
+            errorDisplay.style.display = 'block';
+            return;
+        }
+
+        if (!isValidUrl(longUrl)) {
+            errorDisplay.textContent = "Пожалуйста, убедитесь, что URL начинается с http:// или https:// и имеет правильный формат домена.";
             errorDisplay.style.display = 'block';
             return;
         }
