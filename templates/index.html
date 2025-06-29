@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>shortify : Сокращатель Ссылок</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>shortify</h1>
+    <input type="text" id="longLink" placeholder="Введите длинный URL">
+    <button id="shortifyButton">Сократить</button>
+    <div id="result">
+        <p>Ваша короткая ссылка: <span id="shortLink"></span></p>
+        <button id="copy">Копировать</button>
+    </div>
+    <p id="error"></p>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

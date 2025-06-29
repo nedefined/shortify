@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans';
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #c6b5eb;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #c6b5eb;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    font-size: 1em;
+}
+
+input[type="text"]::placeholder {
+    color: #aaaaaa;
+}
+
+button {
+    background-color: #c6b5eb;
+    color: #1c1c1c;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #b0a0d4;
+    transform: translateY(-2px);
+}
+
+#result {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #c6b5eb;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+#shortLink {
+    color: #c6b5eb;
+    font-weight: bold;
+    word-break: break-all;
+    margin-bottom: 15px;
+    display: block;
+}
+
+#copy {
+    margin-bottom: 0
+}
+
+#error {
+    color: #ff6b6b;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    input[type="text"],
+    button {
+        width: 90%;
+    }
+
+    #result {
+        width: 90%;
+        padding: 15px;
+    }
+}
