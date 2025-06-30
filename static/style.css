@@ -1,73 +1,95 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
+:root {
+    --primary-color: #c6b5eb;
+    --primary-hover: #b0a0d4;
+    --background-dark: #1c1c1c;
+    --card-background: #2a2a2a;
+    --text-light: #f0f0f0;
+    --text-placeholder: #aaaaaa;
+    --error-color: #ff6b6b;
+    --border-radius: 8px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.1rem;
+    --font-size-heading: 2.5rem;
+    --max-width: 500px;
 }
 
 body {
-    font-family: 'Open Sans';
-    background-color: #1c1c1c;
-    color: #f0f0f0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;
-    padding: 1rem;
-    box-sizing: border-box;
+    padding: var(--spacing-md);
 }
 
 h1 {
-    color: #c6b5eb;
-    margin-bottom: 30px;
-    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-heading);
 }
 
 input[type="text"] {
     width: 100%;
-    max-width: 500px;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border: 1px solid #c6b5eb;
-    border-radius: 8px;
-    background-color: #2a2a2a;
-    color: #f0f0f0;
-    font-size: 1em;
+    max-width: var(--max-width);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background-color: var(--card-background);
+    color: var(--text-light);
+    font-size: var(--font-size-base);
 }
 
 input[type="text"]::placeholder {
-    color: #aaaaaa;
+    color: var(--text-placeholder);
+}
+
+input[type="text"]:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 button {
-    background-color: #c6b5eb;
-    color: #1c1c1c;
-    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    padding: var(--spacing-sm) var(--spacing-lg);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: var(--font-size-lg);
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-md);
 }
 
 button:hover {
-    background-color: #b0a0d4;
+    background-color: var(--primary-hover);
     transform: translateY(-2px);
 }
 
+button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
 #result {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #c6b5eb;
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
     text-align: center;
-    margin-top: 20px;
+    margin-top: var(--spacing-md);
     width: 100%;
-    max-width: 500px;
+    max-width: var(--max-width);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: none;
     flex-direction: column;
@@ -75,44 +97,43 @@ button:hover {
 }
 
 #result p {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.1em;
+    margin: 0 0 var(--spacing-sm);
+    font-size: var(--font-size-lg);
 }
 
 #shortLink {
-    color: #c6b5eb;
+    color: var(--primary-color);
     font-weight: bold;
     word-break: break-all;
-    margin-bottom: 15px;
+    margin-bottom: var(--spacing-sm);
     display: block;
 }
 
 #copy {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 #error {
-    color: #ff6b6b;
-    margin-top: 15px;
+    color: var(--error-color);
+    margin-top: var(--spacing-md);
     font-weight: bold;
     text-align: center;
     width: 100%;
-    max-width: 500px;
+    max-width: var(--max-width);
 }
 
 @media (max-width: 600px) {
     h1 {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     input[type="text"],
     button {
-        width: 90%;
+        width: 100%;
     }
 
     #result {
-        width: 90%;
-        padding: 15px;
+        width: 100%;
+        padding: var(--spacing-sm);
     }
 }

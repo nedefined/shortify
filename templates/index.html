@@ -9,14 +9,16 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+
     <h1>shortify</h1>
-    <input type="text" id="longLink" placeholder="Введите длинный URL">
-    <button id="shortifyButton">Сократить</button>
+    <input type="text" id="longLink" placeholder="Введите URL (http:// или https://)">
+    <button id="shortifyButton" aria-label="Сократить URL">Сократить</button>
     <div id="result">
         <p>Ваша короткая ссылка: <span id="shortLink"></span></p>
-        <button id="copy">Копировать</button>
+        <button id="copy" aria-label="Копировать короткую ссылку">Копировать</button>
     </div>
-    <p id="error"></p>
+    <p id="error" role="alert"></p>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
